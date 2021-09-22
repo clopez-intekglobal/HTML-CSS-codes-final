@@ -1,0 +1,10 @@
+span {
+    font-size: 3em;
+    position: relative;
+  }
+
+span:hover:after {
+    position: absolute;
+    content: attr(content);
+    top: 1em;
+}

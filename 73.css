@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#carousel {
+    position:absolute;
+    width:100%;
+    left: 40%;
+}
+
+.slider:after {
+    position: absolute;
+}
+
+/* Slides */
+
+.slider li {
+    position: absolute;
+    list-style: none;
+}
+
+.slider input {
+    display: none;
+}
+
+/* Navigation */
+
+.slider label {
+    background-color: #111;
+    bottom: .5em;
+    display: block;
+    height: 1em;
+    width: 1em; 
+    position: absolute; /*removing this will make the label go crazy*/
+    visibility: hidden;
+    z-index: 10;
+    border: 0.5em;
+    border-color: white;
+}
+
+.slider label:after {
+    bottom: -.2em;
+    left: -.2em;
+    position: absolute;
+    right: -.2em;
+    top: -.2em;
+}
+
+.slider:hover label {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slider input:checked + label {
+    background-color: #fff;
+}
+.slider:hover li:nth-child(1) label {
+    left: .5em;
+}
+.slider:hover li:nth-child(2) label {
+    left: 2em;
+}
+.slider:hover li:nth-child(3) label {
+    left: 3.5em;
+}
+
+/* Images */
+
+.slider img {
+    height: 25em;
+    opacity: 0;
+    transition: 5s;
+    vertical-align: top;
+}
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+}
